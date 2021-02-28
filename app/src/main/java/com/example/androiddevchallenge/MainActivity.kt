@@ -20,10 +20,17 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
+import com.example.androiddevchallenge.data.Dog
+import com.example.androiddevchallenge.data.createDogs
+import com.example.androiddevchallenge.ui.screens.DogDetailScreen
+import com.example.androiddevchallenge.ui.screens.DogListScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,23 +46,36 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
+    val context = LocalContext.current
+    val appNavigation = remember { AppNavigation(AppScreen.DogList(createDogs(context, 20))) }
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        when (val screen = appNavigation.screen.value) {
+            is AppScreen.DogList -> DogListScreen(appNavigation, screen.dogs)
+            is AppScreen.DogDetail -> DogDetailScreen(appNavigation, screen.dog)
+        }
     }
 }
 
-@Preview("Light Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun LightPreview() {
-    MyTheme {
-        MyApp()
-    }
+sealed class AppScreen {
+    class DogList(val dogs: List<Dog>) : AppScreen()
+    class DogDetail(val dog: Dog) : AppScreen()
 }
 
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun DarkPreview() {
-    MyTheme(darkTheme = true) {
-        MyApp()
+class AppNavigation(initialScreen: AppScreen) {
+
+    private var history = Stack<AppScreen>()
+
+    private var currentScreen = mutableStateOf(initialScreen)
+
+    val screen: State<AppScreen>
+        get() = currentScreen
+
+    fun pushScreen(screen: AppScreen) {
+        history.push(currentScreen.value)
+        currentScreen.value = screen
+    }
+
+    fun pop() {
+        history.pop()?.let { currentScreen.value = it }
     }
 }

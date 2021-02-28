@@ -10,4 +10,18 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="cd_dog_image">Picture of the dog</string>
+    <string name="dog_default_description">A perfect fit for any single, couple or family household. He progressed really well during his time in the shelter, but is seeking for a new home!</string>
+    <string name="button_adopt_me">Adopt me</string>
+    <string name="age_years">%1$s Years old</string>
+    <string name="age_months">Months old</string>
+    <string name="unit_kilogram">$1$s kg</string>
+    <string name="unit_centimeter">$1$s cm</string>
+    <string name="placeholder_caretaker">Peter Clark, caretaker</string>
+    <string name="cd_arrow_back">Arrow Back</string>
+    <string name="dog_detail_appbar_title">Adopt</string>
+    <string name="dog_list_info">Currently there are %1$s puppies in our shelter.</string>
+    <string name="dog_list_title">All Puppies</string>
+    <string name="dog_list_button_learn_more">Learn more</string>
+    <string name="dog_list_shelter_duration">In shelter since: %1$s</string>
 </resources>

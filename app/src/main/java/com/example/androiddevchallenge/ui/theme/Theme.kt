@@ -17,33 +17,40 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.*
+import com.example.androiddevchallenge.R
 
 private val DarkColorPalette = darkColors(
-    primary = purple200,
-    primaryVariant = purple700,
-    secondary = teal200
+    primary = Color(73, 105, 245),
+    primaryVariant = Color(143, 169, 255),
+    secondary = Color(250, 205, 82),
+    secondaryVariant = Color(245, 213, 125),
+
+    onPrimary = Color.White,
+    onSecondary = Color.Black
 )
 
 private val LightColorPalette = lightColors(
-    primary = purple500,
-    primaryVariant = purple700,
-    secondary = teal200
-
-        /* Other default colors to override
-    background = Color.White,
+    primary = Color(73, 105, 245),
+    primaryVariant = Color(143, 169, 255),
+    secondary = Color(250, 205, 82),
+    secondaryVariant = Color(245, 213, 125),
+    background = Color(255, 254, 247),
     surface = Color.White,
+
     onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+    onSecondary = Color.Black
 )
 
 @Composable
-fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
