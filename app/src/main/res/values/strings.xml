@@ -15,8 +15,8 @@
     <string name="button_adopt_me">Adopt me</string>
     <string name="age_years">%1$s Years old</string>
     <string name="age_months">Months old</string>
-    <string name="unit_kilogram">$1$s kg</string>
-    <string name="unit_centimeter">$1$s cm</string>
+    <string name="unit_kilogram">%1$s kg</string>
+    <string name="unit_centimeter">%1$s cm</string>
     <string name="placeholder_caretaker">Peter Clark, caretaker</string>
     <string name="cd_arrow_back">Arrow Back</string>
     <string name="dog_detail_appbar_title">Adopt</string>
