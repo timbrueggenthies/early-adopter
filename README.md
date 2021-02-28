@@ -1,27 +1,32 @@
-# Template repository
+# Put title of your app here
 
-Template repository for the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
+<!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
+<!--- You can find both of these in the url bar when you open your repository in github. -->
+![Workflow result](https://github.com/timbrueggenthies/early-adopter/workflows/Check/badge.svg)
 
-## Getting started
-Copy this repository by pressing the "Use this template" button in Github.
-Clone your repository and open it in the latest [Android Studio (Canary build)](https://developer.android.com/studio/preview).
 
-## Submission requirements
-- Follow the challenge description on the project website: [developer.android.com/dev-challenge](https://developer.android.com/dev-challenge)
-- All UI should be written using Jetpack Compose
-- The Github Actions workflow should complete successfully
-- Include two screenshots of your submission in the [results](results) folder. The names should be
-  screenshot_1.png and screenshot_2.png.
-- Include a screen record of your submission in the [results](results) folder. The name should be
-  video.mp4
-- Replace the contents of [README.md](README.md) with the contents of [README-template.md](README-template.md) and fill out the template.
+## :scroll: Description
+<!--- Describe your app in one or two sentences -->
+This app is part of the AndroidDevChallenge in order of the beta launch of Jetpack Compose. It
+containsa list of puppies, that currently live in shelter and are hoping for an adoption. In
+addition, a details screen for every dog is available.
+All UI is written with Jetpack Compose.
 
-## Code formatting
-The CI uses [Spotless](https://github.com/diffplug/spotless) to check if your code is formatted correctly and contains the right licenses.
-Internally, Spotless uses [ktlint](https://github.com/pinterest/ktlint) to check the formatting of your code.
-To set up ktlint correctly with Android Studio, follow one of the [listed setup options](https://github.com/pinterest/ktlint#-with-intellij-idea).
 
-Before committing your code, run `./gradlew app:spotlessApply` to automatically format your code.
+## :bulb: Motivation and Context
+<!--- Optionally point readers to interesting parts of your submission. -->
+<!--- What are you especially proud of? -->
+I am really fascinated by Jetpack Compose, and am following around since the first announcements.
+Because i started working on a Image Library app in my freetime, and am planning to use Jetpack
+Compose heavily, this Challenge seems like a perfect opportunity to learn the framework.
+In this submission, additional work went into adopting the new animation system. The selection of puppies
+in the list reveals a nice transition to a bigger card, so that the user can get a glance at the dog
+before continuing to the next screen.
+
+
+## :camera_flash: Screenshots
+<!-- You can add more screenshots here if you like -->
+<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">
 
 ## License
 ```
