@@ -30,7 +30,7 @@ import com.example.androiddevchallenge.data.createDogs
 import com.example.androiddevchallenge.ui.screens.DogDetailScreen
 import com.example.androiddevchallenge.ui.screens.DogListScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import java.util.*
+import java.util.Stack
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
